@@ -373,6 +373,7 @@
 
         .units-grid {
             display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 22px;
         }
 
@@ -380,11 +381,14 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
-            min-height: 228px;
+            min-height: 420px;
             background: rgba(6, 13, 28, 0.86);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            padding: 22px;
         }
 
         .unit-badge {
@@ -401,7 +405,11 @@
 
         .unit-card h3 {
             margin: 0;
-            font-size: 1.45rem;
+            font-size: clamp(1.7rem, 2vw, 2.80rem);
+            line-height: 1.05;
+            font-weight: 800;
+            text-align: center;
+            color: #eefaff;
         }
 
         .unit-card:hover {
