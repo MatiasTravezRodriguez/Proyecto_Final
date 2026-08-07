@@ -227,54 +227,7 @@
             padding: 28px;
         }
 
-        .site-audio {
-            position: fixed;
-            left: 16px;
-            bottom: 16px;
-            z-index: 9999;
-            width: min(320px, calc(100% - 32px));
-            background: #000;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 14px;
-            backdrop-filter: blur(8px);
-            padding: 10px 12px;
-            box-shadow: 0 18px 42px rgba(0, 0, 0, 0.48);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .site-audio audio {
-            display: none;
-        }
-
-        .site-audio .volume-slider {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 180px;
-            height: 6px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 999px;
-            outline: none;
-        }
-
-        .site-audio .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(88,216,255,0.95), rgba(128,109,255,0.95));
-            box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-            cursor: pointer;
-        }
-
-        .site-audio .label {
-            font-size: 0.82rem;
-            color: #d9d9d9;
-            white-space: nowrap;
-        }
+        .site-audio { display: none; }
 
         .personal-contact-layout {
             display: grid;
@@ -656,14 +609,10 @@
         </main>
     </div>
 
-    <div class="site-audio" aria-hidden="false">
-        <audio id="siteAudio" autoplay loop preload="auto" playsinline>
-            <source src="./assets/pouuu.mp4" type="audio/mp4" />
-            Tu navegador no soporta reproducción de audio.
-        </audio>
-        <span class="label">Música</span>
-        <input class="volume-slider" id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volumen" />
-    </div>
+    <audio id="siteAudio" autoplay loop preload="auto" playsinline>
+        <source src="./assets/pouuu.mp4" type="audio/mp4" />
+        Tu navegador no soporta reproducción de audio.
+    </audio>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -690,24 +639,12 @@
                 const centerY = rect.top + rect.height / 2;
 
 
-            // Control de volumen del audio global (solo permitir bajar hasta el volumen inicial)
+            // Inicializar audio global en volumen reducido
             (function(){
                 const audio = document.getElementById('siteAudio');
-                const slider = document.getElementById('volumeSlider');
-                if (!audio || !slider) return;
-                // intento de autoplay: si el navegador bloquea, el usuario deberá interactuar
-                const initialVolume = 1;
-                audio.volume = initialVolume;
-                slider.value = initialVolume;
-
-                slider.addEventListener('input', (e) => {
-                    const v = parseFloat(e.target.value);
-                    // nunca permitir subir por encima del volumen inicial
-                    const allowed = Math.min(v, initialVolume);
-                    audio.volume = allowed;
-                    // reflejar valor si se intentó subir
-                    if (v > initialVolume) slider.value = initialVolume;
-                });
+                if (!audio) return;
+                audio.volume = 0.6; // bajar dos niveles respecto a 1.0
+                audio.play().catch(()=>{});
             })();
                 const dx = clientX - centerX;
                 const dy = clientY - centerY;

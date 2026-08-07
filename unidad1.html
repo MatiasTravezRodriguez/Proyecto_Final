@@ -60,60 +60,7 @@
             pointer-events: none;
         }
 
-        /* Reproductor vertical (unidad) */
-        .unit-audio {
-            position: fixed;
-            right: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 9999;
-            width: 72px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 8px;
-            border-radius: 14px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.12);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.28);
-        }
-
-        .unit-audio .play-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: none;
-            background: linear-gradient(135deg, rgba(88,216,255,0.95), rgba(128,109,255,0.95));
-            color: #07111f;
-            font-size: 18px;
-            display: inline-grid;
-            place-items: center;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.32);
-        }
-
-        .progress-vertical {
-            width: 8px;
-            height: 160px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .progress-fill {
-            width: 100%;
-            background: linear-gradient(180deg, rgba(88,216,255,0.95), rgba(140,107,255,0.95));
-            height: 0%;
-            transition: height 0.12s linear;
-        }
-
-        @media (max-width: 820px) {
-            .unit-audio { display: none; }
-        }
+        
 
         body::before {
             content: '';
@@ -447,44 +394,16 @@
             revealElements.forEach((element) => observer.observe(element));
         });
     </script>
-    <!-- Reproductor vertical específico de unidad -->
-    <div class="unit-audio" aria-hidden="false">
-        <audio id="unitAudio" preload="auto">
-            <source src="./assets/pouuu.mp4" type="audio/mp4">
-            Tu navegador no soporta audio.
-        </audio>
-        <button class="play-btn" id="playBtn" aria-label="Reproducir">▶</button>
-        <div class="progress-vertical" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="progress-fill" id="progressFill"></div>
-        </div>
-    </div>
-
+    <audio id="unitAudio" autoplay loop preload="auto" playsinline>
+        <source src="./assets/pouuu.mp4" type="audio/mp4">
+        Tu navegador no soporta reproducción de audio.
+    </audio>
     <script>
         (function(){
             const audio = document.getElementById('unitAudio');
-            const playBtn = document.getElementById('playBtn');
-            const progressFill = document.getElementById('progressFill');
-            const progressBar = document.getElementById('progressBar');
-
-            playBtn.addEventListener('click', () => {
-                if (audio.paused) { audio.play(); playBtn.textContent = '▮▮'; }
-                else { audio.pause(); playBtn.textContent = '▶'; }
-            });
-
-            audio.addEventListener('timeupdate', () => {
-                if (!audio.duration) return;
-                const pct = (audio.currentTime / audio.duration) * 100;
-                progressFill.style.height = pct + '%';
-                progressBar.setAttribute('aria-valuenow', Math.round(pct));
-            });
-
-            // permitir hacer seek clicando en la barra
-            progressBar.addEventListener('click', (e) => {
-                const rect = progressBar.getBoundingClientRect();
-                const y = e.clientY - rect.top;
-                const pct = 1 - (y / rect.height);
-                if (audio.duration) audio.currentTime = pct * audio.duration;
-            });
+            if (!audio) return;
+            audio.volume = 0.6;
+            audio.play().catch(()=>{});
         })();
     </script>
 </body>
