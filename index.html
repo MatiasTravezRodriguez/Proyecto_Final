@@ -262,9 +262,81 @@
             padding: 28px;
         }
 
+        .personal-contact-layout {
+            display: grid;
+            grid-template-columns: minmax(420px, 0.95fr) minmax(280px, 0.75fr);
+            gap: 26px;
+            align-items: stretch;
+        }
+
         .info-card {
-            max-width: 760px;
+            max-width: 620px;
             margin: 0 auto;
+            width: 100%;
+            min-height: auto;
+        }
+
+        .contact-card {
+            padding: 28px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-card h2 {
+            margin: 0 0 24px;
+            font-size: clamp(1.4rem, 2vw, 1.8rem);
+        }
+
+        .contact-card .contact-list {
+            display: grid;
+            gap: 22px;
+        }
+
+        .contact-card .contact-row {
+            display: grid;
+            gap: 10px;
+            justify-items: center;
+            text-align: center;
+            padding: 16px 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-card .contact-row .contact-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(88, 216, 255, 0.95), rgba(128, 109, 255, 0.95));
+            color: #07111f;
+            font-size: 1.8rem;
+        }
+
+        .contact-card .contact-row .contact-label {
+            display: block;
+            color: #cddcf1;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .contact-card .contact-row a {
+            color: #edf7ff;
+            font-weight: 500;
+        }
+
+        .contact-card .contact-row a:hover {
+            color: var(--accent);
         }
 
         .info-card h2,
@@ -465,6 +537,10 @@
                 align-items: stretch;
             }
 
+            .personal-contact-layout {
+                grid-template-columns: 1fr;
+            }
+
             .grid-2,
             .grid-3 {
                 grid-template-columns: 1fr;
@@ -512,15 +588,32 @@
             </section>
 
             <section class="section-surface reveal">
-                <div class="glass-panel info-card">
-                    <h2 class="section-title">Información Personal</h2>
-                    <div class="info-list">
-                        <div class="info-item"><strong>Nombre</strong><span>Matias Alejandro Travez Rodriguez</span></div>
-                        <div class="info-item"><strong>País</strong><span>Ecuador</span></div>
-                        <div class="info-item"><strong>Ciudad</strong><span>Latacunga</span></div>
-                        <div class="info-item"><strong>Edad</strong><span>18 años</span></div>
-                        <div class="info-item"><strong>Correo</strong><span><a href="mailto:matiastraves84@gmail.com">matiastraves84@gmail.com</a></span></div>
+                <div class="personal-contact-layout">
+                    <div class="glass-panel info-card">
+                        <h2 class="section-title">Información Personal</h2>
+                        <div class="info-list">
+                            <div class="info-item"><strong>Nombre</strong><span>Matias Alejandro Travez Rodriguez</span></div>
+                            <div class="info-item"><strong>País</strong><span>Ecuador</span></div>
+                            <div class="info-item"><strong>Ciudad</strong><span>Latacunga</span></div>
+                            <div class="info-item"><strong>Edad</strong><span>18 años</span></div>
+                        </div>
                     </div>
+
+                    <aside class="contact-card">
+                        <h2 class="section-title">Mis Contactos Aquí</h2>
+                        <div class="contact-list">
+                            <div class="contact-row">
+                                <span class="contact-icon">💬</span>
+                                <span class="contact-label">WhatsApp</span>
+                                <a href="https://wa.me/593998064849" target="_blank" rel="noopener noreferrer">0998064849</a>
+                            </div>
+                            <div class="contact-row">
+                                <span class="contact-icon">@</span>
+                                <span class="contact-label">Correo</span>
+                                <a href="mailto:matiastraves84@gmail.com">matiastraves84@gmail.com</a>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </section>
 
