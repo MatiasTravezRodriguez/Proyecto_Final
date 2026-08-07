@@ -254,6 +254,28 @@
             align-items: center;
         }
 
+        .pou-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            border: 2px solid rgba(88, 216, 255, 0.9);
+            background: rgba(7, 17, 31, 0.55);
+            color: #eefaff;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16), 0 10px 24px rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .pou-button:hover {
+            transform: translateY(-2px);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.24), 0 14px 30px rgba(0,0,0,0.24);
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(28px);
@@ -282,6 +304,7 @@
     </video>
     <div class="page-wrap">
         <main>
+            <a class="pou-button" href="index.html">Volver a Inicio</a>
             <section class="section-surface reveal">
                 <div class="glass-panel unit-page-header">
                     <h1 class="section-title">Unidad 1</h1>
@@ -295,7 +318,8 @@
                         <details>
                             <summary>Modelo de Von Neumann y Harvard</summary>
                             <div class="topic-content">
-                                <p>En resumen: <strong>Von Neumann</strong> es más simple y económica (usada en computadores generales),</p>
+                                <p>El <strong>modelo de Von Neumann</strong> guarda las instrucciones y los datos en una sola memoria compartida, lo que simplifica el diseño de las computadoras, pero limita su velocidad al no poder acceder a ambos al mismo tiempo.</p>
+                                <p>Por el contrario, la <strong>arquitectura Harvard</strong> separa físicamente la memoria en dos bloques (uno para datos y otro para instrucciones), permitiendo al procesador leer el código y procesar información de forma simultánea para lograr mayor rapidez.</p>
                             </div>
                         </details>
                     </article>

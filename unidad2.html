@@ -266,6 +266,38 @@
             align-items: center;
         }
 
+        .unit2-bg-video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .pou-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            border: 2px solid rgba(88, 216, 255, 0.9);
+            background: rgba(7, 17, 31, 0.55);
+            color: #eefaff;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16), 0 10px 24px rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .pou-button:hover {
+            transform: translateY(-2px);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.24), 0 14px 30px rgba(0,0,0,0.24);
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(28px);
@@ -294,6 +326,7 @@
     </video>
     <div class="page-wrap">
         <main>
+            <a class="pou-button" href="index.html">Volver a Inicio</a>
             <section class="section-surface reveal">
                 <div class="glass-panel unit-page-header">
                     <h1 class="section-title">Unidad 2</h1>
@@ -305,9 +338,16 @@
                     <article class="topic-card">
                         <span class="topic-number">1</span>
                         <details>
-                            <summary>Tema 1</summary>
+                            <summary>Algoritmos y sus caracteristicas</summary>
                             <div class="topic-content">
-                                <p>Espacio para describir el primer tema de la Unidad 2 y el contexto que se necesita entender.</p>
+                                <p>Un <strong>algoritmo</strong> es una secuencia finita, ordenada y precisa de pasos para resolver un problema o ejecutar una tarea.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Finito:</strong> Tiene un inicio y un final tras un número determinado de pasos.</li>
+                                    <li><strong>Preciso:</strong> Cada paso debe indicar exactamente qué hacer, sin ambigüedades.</li>
+                                    <li><strong>Definido:</strong> Produce siempre el mismo resultado frente a las mismas entradas.</li>
+                                    <li><strong>Entrada y Salida:</strong> Recibe datos de inicio y genera una respuesta o solución concreta.</li>
+                                </ul>
                             </div>
                         </details>
                     </article>
@@ -315,9 +355,16 @@
                     <article class="topic-card">
                         <span class="topic-number">2</span>
                         <details>
-                            <summary>Tema 2</summary>
+                            <summary>Diagramas de flujo</summary>
                             <div class="topic-content">
-                                <p>Espacio para comentar herramientas, procedimientos o ejemplos de práctica.</p>
+                                <p>Un <strong>diagrama de flujo</strong> es la representación gráfica de un algoritmo, utilizada para visualizar la secuencia de pasos de un proceso mediante símbolos estandarizados.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Símbolos estándar:</strong> Usa figuras geométricas específicas (óvalos para inicio/fin, rectángulos para procesos, rombos para decisiones).</li>
+                                    <li><strong>Flujo unidireccional:</strong> Muestra el orden de lectura mediante líneas y flechas que conectan los pasos.</li>
+                                    <li><strong>Sintético y claro:</strong> Reduce la lógica compleja a una estructura visual fácil de entender de un vistazo.</li>
+                                    <li><strong>Estructurado:</strong> Solo tiene un punto de entrada de inicio y un punto final.</li>
+                                </ul>
                             </div>
                         </details>
                     </article>
@@ -325,9 +372,16 @@
                     <article class="topic-card">
                         <span class="topic-number">3</span>
                         <details>
-                            <summary>Tema 3</summary>
+                            <summary>Pseudocodigo</summary>
                             <div class="topic-content">
-                                <p>Espacio para registrar tareas, entregables o conclusiones de esta etapa.</p>
+                                <p>El <strong>pseudocódigo</strong> es la representación escrita de un algoritmo que utiliza lenguaje humano estructurado para describir la lógica de un programa sin seguir la sintaxis estricta de un lenguaje de programación.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Lenguaje intermedio:</strong> Se ubica entre el lenguaje natural y el código de programación real.</li>
+                                    <li><strong>Flexible pero legible:</strong> No exige una sintaxis rigurosa, priorizando la claridad y la comprensión lógica.</li>
+                                    <li><strong>Estructurado:</strong> Emplea palabras clave estándar (como <em>Inicio</em>, <em>Fin</em>, <em>Si-Entonces</em>, <em>Mientras</em>) para marcar el flujo del algoritmo.</li>
+                                    <li><strong>Fácil de traducir:</strong> Sirve como borrador directo para escribir el programa final en cualquier lenguaje (Python, C++, Java, etc.).</li>
+                                </ul>
                             </div>
                         </details>
                     </article>
@@ -335,9 +389,16 @@
                     <article class="topic-card">
                         <span class="topic-number">4</span>
                         <details>
-                            <summary>Tema 4</summary>
+                            <summary>Modelado de problemas</summary>
                             <div class="topic-content">
-                                <p>Contenido complementario para reforzar el aprendizaje y cerrar la unidad.</p>
+                                <p>El <strong>modelado de problemas</strong> es la técnica de abstraer un escenario del mundo real para convertirlo en un esquema simplificado y estructurado que un algoritmo o sistema pueda resolver.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Abstracción:</strong> Selecciona únicamente los datos y reglas relevantes del problema, ignorando los detalles innecesarios.</li>
+                                    <li><strong>Representación formal:</strong> Transforma una situación abstracta en variables, ecuaciones, gráficos o diagramas definidos.</li>
+                                    <li><strong>Delimitación de alcance:</strong> Establece con claridad los límites, restricciones y objetivos que debe cumplir la solución.</li>
+                                    <li><strong>Base para la solución:</strong> Sirve como el diseño previo fundamental antes de escribir pseudocódigo o desarrollar el software.</li>
+                                </ul>
                             </div>
                         </details>
                     </article>

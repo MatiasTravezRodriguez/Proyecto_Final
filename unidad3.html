@@ -267,6 +267,28 @@
             align-items: center;
         }
 
+        .pou-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            border: 2px solid rgba(88, 216, 255, 0.9);
+            background: rgba(7, 17, 31, 0.55);
+            color: #eefaff;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16), 0 10px 24px rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .pou-button:hover {
+            transform: translateY(-2px);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.24), 0 14px 30px rgba(0,0,0,0.24);
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(28px);
@@ -295,6 +317,7 @@
     </video>
     <div class="page-wrap">
         <main>
+            <a class="pou-button" href="index.html">Volver a Inicio</a>
             <section class="section-surface reveal">
                 <div class="glass-panel unit-page-header">
                     <h1 class="section-title">Unidad 3</h1>
@@ -306,9 +329,16 @@
                     <article class="topic-card">
                         <span class="topic-number">1</span>
                         <details>
-                            <summary>Tema 1</summary>
+                            <summary>Lenguajes Y paradigmas de programacion</summary>
                             <div class="topic-content">
-                                <p>Espacio para incluir un recurso de apoyo o un contenido documental importante.</p>
+                                <p>Los <strong>lenguajes y paradigmas de programación</strong> son los idiomas e ideales de diseño que determinan cómo los programadores estructuran, escriben y organizan el código para construir software.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Abstracción del hardware:</strong> Permiten a los desarrolladores escribir lógica en un lenguaje comprensible sin gestionar directamente los circuitos del procesador.</li>
+                                    <li><strong>Diversidad de enfoques (Paradigmas):</strong> Agrupan estilos de programación según la lógica deseada, como el <em>imperativo</em> (paso a paso), <em>orientado a objetos</em> (modelado por entidades) o <em>funcional</em> (evaluación de funciones puras).</li>
+                                    <li><strong>Sintaxis y reglas estrictas:</strong> Exigen normas gramaticales fijas para ser interpretados o compilados correctamente por la computadora.</li>
+                                    <li><strong>Reutilización y escalabilidad:</strong> Facilitan la organización del código en módulos para construir sistemas complejos, mantenibles y colaborativos.</li>
+                                </ul>
                             </div>
                         </details>
                     </article>
@@ -316,9 +346,16 @@
                     <article class="topic-card">
                         <span class="topic-number">2</span>
                         <details>
-                            <summary>Tema 2</summary>
+                            <summary>Introduccion a python</summary>
                             <div class="topic-content">
-                                <p>Espacio para resumir trabajos, entregas y resultados finales.</p>
+                                <p>La <strong>introducción a Python</strong> abarca el estudio de este lenguaje de programación de alto nivel, conocido por su sintaxis limpia, legibilidad y versatilidad en el desarrollo de software actual.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Sintaxis limpia y legible:</strong> Utiliza sangrías (indentación) en lugar de llaves para delimitar bloques de código, haciendo que parezca inglés escrito.</li>
+                                    <li><strong>Multiparadigma y multipropósito:</strong> Soporta programación orientada a objetos, imperativa y funcional, sirviendo para desarrollo web, ciencia de datos, inteligencia artificial y automatización.</li>
+                                    <li><strong>Interpretado y dinámico:</strong> No requiere compilación previa para ejecutarse y detecta los tipos de datos automáticamente en tiempo de ejecución.</li>
+                                    <li><strong>Ecosistema masivo:</strong> Cuenta con una biblioteca estándar muy completa y miles de librerías externas creadas por su comunidad.</li>
+                                </ul>
                             </div>
                         </details>
                     </article>
@@ -326,9 +363,16 @@
                     <article class="topic-card">
                         <span class="topic-number">3</span>
                         <details>
-                            <summary>Tema 3</summary>
+                            <summary>Operaciones algebraicas, relacionales y logicas</summary>
                             <div class="topic-content">
-                                <p>Espacio para proyectos complementarios o próximos pasos.</p>
+                                <p>Las <strong>operaciones algebraicas, relacionales y lógicas</strong> son las reglas fundamentales que permiten manipular datos, realizar cálculos y tomar decisiones automáticas dentro de un programa.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Operaciones Algebraicas (Aritméticas):</strong> Ejecutan cálculos matemáticos estándar (como suma <code>+</code>, resta <code>-</code>, multiplicación <code>*</code> o módulo <code>%</code>) y devuelven un resultado numérico.</li>
+                                    <li><strong>Operaciones Relacionales (Comparativas):</strong> Evalúan la relación entre dos valores (como mayor que <code>&gt;</code>, igual a <code>==</code> o diferente de <code>!=</code>) para comprobar condiciones.</li>
+                                    <li><strong>Operaciones Lógicas (Booleanas):</strong> Combinan o invierten estados de verdad mediante operadores (como <code>AND</code>, <code>OR</code> y <code>NOT</code>) para construir reglas de decisión complejas.</li>
+                                    <li><strong>Retorno Verdadero/Falso (Booleanos):</strong> Salvo las algebraicas, las operaciones relacionales y lógicas siempre devuelven como resultado final un valor booleano: <em>Verdadero</em> (<code>True</code>) o <em>Falso</em> (<code>False</code>).</li>
+                                </ul>
                             </div>
                         </details>
                     </article>
@@ -336,9 +380,16 @@
                     <article class="topic-card">
                         <span class="topic-number">4</span>
                         <details>
-                            <summary>Tema 4</summary>
+                            <summary>Estructuras de control condicionales</summary>
                             <div class="topic-content">
-                                <p>Contenido para cerrar la unidad con evidencias, referencias o actividades finales.</p>
+                                <p>Las <strong>estructuras de control condicionales</strong> son instrucciones que permiten alterar el flujo de ejecución de un programa, evaluando una condición para decidir qué bloque de código ejecutar.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Toma de decisiones:</strong> Evalúan una expresión lógica o relacional para elegir entre caminos de ejecución alternativos.</li>
+                                    <li><strong>Evaluación booleana:</strong> Su funcionamiento se basa estrictamente en un resultado de <em>Verdadero</em> (<code>True</code>) o <em>Falso</em> (<code>False</code>).</li>
+                                    <li><strong>Bifurcación del flujo:</strong> Permiten omitir o ejecutar secciones enteras de código según se cumplan o no los criterios definidos.</li>
+                                    <li><strong>Variedad de formas:</strong> Incluyen estructuras simples (<em>Si</em> / <code>if</code>), dobles (<em>Si-Sino</em> / <code>if-else</code>), múltiples (<em>Si-SinoSi</em> / <code>elif</code>) y de selección múltiple por casos (<em>Según</em> / <code>switch</code>).</li>
+                                </ul>
                             </div>
                         </details>
                     </article>
@@ -346,9 +397,16 @@
                     <article class="topic-card">
                         <span class="topic-number">5</span>
                         <details>
-                            <summary>Tema 5</summary>
+                            <summary>Estructuras de control repetitivas</summary>
                             <div class="topic-content">
-                                <p>Bloque para resumir resultados, próximos pasos y preparación final del proyecto.</p>
+                                <p>Las <strong>estructuras de control repetitivas</strong> (o bucles) son instrucciones que permiten ejecutar un mismo bloque de código de forma cíclica mientras se cumpla una condición determinada.</p>
+                                <p>Sus características principales son:</p>
+                                <ul>
+                                    <li><strong>Automatización de tareas:</strong> Evitan la repetición manual de código ejecutando iteraciones sucesivas.</li>
+                                    <li><strong>Control por condición:</strong> Utilizan expresiones lógicas para determinar cuándo continuar o detener las repeticiones (previniendo bucles infinitos).</li>
+                                    <li><strong>Tipos por uso:</strong> Se dividen en iteraciones definidas por conteo (<em>Para</em> / <code>for</code>) e iteraciones sujetas a condiciones dinámicas (<em>Mientras</em> / <code>while</code>).</li>
+                                    <li><strong>Manejo de variables de control:</strong> Emplean contadores o banderas para rastrear el progreso de cada ciclo y evaluar la condición de parada.</li>
+                                </ul>
                             </div>
                         </details>
                     </article>
