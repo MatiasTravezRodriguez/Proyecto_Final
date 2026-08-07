@@ -568,29 +568,6 @@
             </section>
 
             <section class="section-surface reveal">
-                <div class="cta-banner">
-                    <h2 class="section-title">Aprovecha el estilo Pou</h2>
-                    <p>He reorganizado tu contenido para que se vea más profesional sin perder la esencia. El reproductor de audio está listo para cargar un archivo en <strong>audio/pou-theme.mp3</strong> una vez tengas el audio con derechos de uso.</p>
-                    <a class="btn btn-primary" href="#contacto">Enviar mensaje</a>
-                </div>
-            </section>
-
-            <section class="section-surface reveal">
-                <div class="audio-panel">
-                    <div class="audio-meta">
-                        <span class="audio-label">Reproductor de música de fondo</span>
-                        <p>Controla la reproducción con un clic. El audio se reproduce en bucle, pero si el navegador bloquea el autoplay, inicia la pista manualmente.</p>
-                    </div>
-                    <div class="audio-controls">
-                        <button id="toggle-play" class="btn btn-primary" type="button" aria-pressed="false">▶ Reproducir</button>
-                        <button id="mute-toggle" class="btn btn-secondary" type="button" aria-pressed="false">🔊 Silenciar</button>
-                        <input id="volume-range" class="volume-slider" type="range" min="0" max="1" step="0.01" value="0.60" aria-label="Ajustar volumen" />
-                    </div>
-                    <p class="section-footer">Archivo de audio recomendado: <strong>audio/pou-theme.mp3</strong>. Reemplaza este archivo por tu canción con derechos de uso.</p>
-                </div>
-            </section>
-
-            <section class="section-surface reveal">
                 <div class="grid-3 units-grid">
                     <a href="unidad1.html">
                         <article class="unit-card">
@@ -650,63 +627,7 @@
         </main>
     </div>
 
-    <audio id="bg-audio" loop preload="metadata">
-        <source src="audio/pou-theme.mp3" type="audio/mpeg" />
-        Tu navegador no soporta audio HTML5.
-    </audio>
-
     <script>
-        const audio = document.getElementById('bg-audio');
-        const playButton = document.getElementById('toggle-play');
-        const muteButton = document.getElementById('mute-toggle');
-        const volumeRange = document.getElementById('volume-range');
-
-        audio.volume = 0.6;
-        audio.loop = true;
-
-        const updatePlayButton = () => {
-            const isPlaying = !audio.paused;
-            playButton.textContent = isPlaying ? '⏸ Pausar' : '▶ Reproducir';
-            playButton.setAttribute('aria-pressed', String(isPlaying));
-        };
-
-        const updateMuteButton = () => {
-            muteButton.textContent = audio.muted ? '🔇 Silencio' : '🔊 Silenciar';
-            muteButton.setAttribute('aria-pressed', String(audio.muted));
-        };
-
-        playButton.addEventListener('click', async () => {
-            if (audio.paused) {
-                try {
-                    await audio.play();
-                } catch (error) {
-                    console.warn('La reproducción automática fue bloqueada. Inicia audio con un clic.');
-                }
-            } else {
-                audio.pause();
-            }
-            updatePlayButton();
-        });
-
-        muteButton.addEventListener('click', () => {
-            audio.muted = !audio.muted;
-            updateMuteButton();
-        });
-
-        volumeRange.addEventListener('input', (event) => {
-            audio.volume = Number(event.target.value);
-            if (audio.volume === 0) {
-                audio.muted = true;
-            } else if (audio.muted) {
-                audio.muted = false;
-            }
-            updateMuteButton();
-            updatePlayButton();
-        });
-
-        audio.addEventListener('play', updatePlayButton);
-        audio.addEventListener('pause', updatePlayButton);
-
         document.addEventListener('DOMContentLoaded', () => {
             const revealElements = document.querySelectorAll('.reveal');
             const observer = new IntersectionObserver((entries) => {
