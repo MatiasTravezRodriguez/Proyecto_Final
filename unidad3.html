@@ -73,42 +73,6 @@
             padding: 24px 24px 44px;
         }
 
-        .site-header {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 18px 0;
-        }
-
-        .brand {
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            font-size: 1rem;
-            color: #e7f5ff;
-        }
-
-        .nav-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .nav-item {
-            color: rgba(255, 255, 255, 0.78);
-            font-size: 0.95rem;
-            transition: color 0.24s ease, transform 0.24s ease;
-        }
-
-        .nav-item:hover {
-            color: var(--accent);
-            transform: translateY(-1px);
-        }
-
         .section-title {
             margin: 0 0 22px;
             font-size: clamp(1.6rem, 2vw, 2.25rem);
@@ -235,15 +199,6 @@
                 padding: 18px 18px 32px;
             }
 
-            .site-header {
-                justify-content: space-between;
-            }
-
-            .nav-list {
-                width: 100%;
-                justify-content: flex-start;
-            }
-
             .unit-topics {
                 grid-template-columns: 1fr;
             }
@@ -252,17 +207,6 @@
 </head>
 <body>
     <div class="page-wrap">
-        <header class="site-header reveal">
-            <a class="brand" href="index.html">Matias Travez</a>
-            <nav class="nav-list" aria-label="Menú principal">
-                <a class="nav-item" href="index.html">Inicio</a>
-                <a class="nav-item" href="unidad1.html">Unidad 1</a>
-                <a class="nav-item" href="unidad2.html">Unidad 2</a>
-                <a class="nav-item" href="unidad3.html">Unidad 3</a>
-                <a class="nav-item" href="index.html#contacto">Contacto</a>
-            </nav>
-        </header>
-
         <main>
             <section class="section-surface reveal">
                 <div class="glass-panel unit-page-header">
