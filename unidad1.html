@@ -134,28 +134,87 @@
 
         .unit-topics {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 20px;
         }
 
         .topic-card {
+            position: relative;
             padding: 24px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
         }
 
-        .topic-card h3 {
-            margin: 0 0 12px;
-            font-size: 1.12rem;
+        .topic-card .topic-number {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(88, 216, 255, 0.95), rgba(128, 109, 255, 0.95));
+            color: #07111f;
+            font-weight: 800;
+            font-size: 0.88rem;
+            border: 1px solid rgba(255,255,255,0.55);
+        }
+
+        .topic-card details {
+            margin-top: 20px;
+        }
+
+        .topic-card summary {
+            list-style: none;
+            cursor: pointer;
+            font-size: 1.08rem;
+            font-weight: 700;
             color: #eefaff;
+            outline: none;
+            padding-right: 28px;
+            display: flex;
+            align-items: center;
         }
 
-        .topic-card p {
-            margin: 0;
+        .topic-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .topic-card summary::after {
+            content: '+';
+            position: absolute;
+            right: 17px;
+            top: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #aeeaff;
+            font-size: 1.28rem;
+            line-height: 1;
+        }
+
+        .topic-card details[open] summary::after {
+            content: '−';
+        }
+
+        .topic-card .topic-content {
             color: #b1cce8;
-            line-height: 1.58;
+            line-height: 1.72;
             font-size: 0.92rem;
+            margin-top: 14px;
+        }
+
+        .topic-card .topic-content p {
+            margin: 0;
         }
 
         .btn {
@@ -237,16 +296,53 @@
             <section class="section-surface reveal">
                 <div class="unit-topics">
                     <article class="topic-card">
-                        <h3>Tema 1</h3>
-                        <p>Espacio para describir el primer tema de la unidad y su relación con los objetivos de aprendizaje.</p>
+                        <span class="topic-number">1</span>
+                        <details>
+                            <summary>Modelo de Von Neumann y Harvard</summary>
+                            <div class="topic-content">
+                                <p>En resumen: <strong>Von Neumann</strong> es más simple y económica (usada en computadores generales),</p>
+                            </div>
+                        </details>
                     </article>
+
                     <article class="topic-card">
-                        <h3>Tema 2</h3>
-                        <p>Espacio para explicar actividades, ejemplos o ejemplos prácticos que complementen el contenido.</p>
+                        <span class="topic-number">2</span>
+                        <details>
+                            <summary>Sistemas operativos</summary>
+                            <div class="topic-content">
+                                <p>Un sistema operativo es el software esencial que administra el hardware de un equipo —como el procesador, la memoria y el almacenamiento— y permite que el usuario interactúe con las aplicaciones de forma sencilla, segura y sin complicaciones técnicas. Sistemas como Windows, Android o iOS coordinan estos recursos en segundo plano para que todo funcione sin problemas.</p>
+                            </div>
+                        </details>
                     </article>
+
                     <article class="topic-card">
-                        <h3>Tema 3</h3>
-                        <p>Espacio para registrar recursos, conclusiones o actividades finales de la unidad.</p>
+                        <span class="topic-number">3</span>
+                        <details>
+                            <summary>Sistemas de numeracion y conversiones</summary>
+                            <div class="topic-content">
+                                <p>Un sistema de numeración representa cantidades mediante distintas bases, como la <strong>decimal</strong> (humana), la <strong>binaria</strong> (de los circuitos) o la <strong>hexadecimal</strong> (para simplificar datos). Su conversión transforma un mismo valor entre estos sistemas usando operaciones directas, un proceso clave para traducir la información entre las personas y las computadoras.</p>
+                            </div>
+                        </details>
+                    </article>
+
+                    <article class="topic-card">
+                        <span class="topic-number">4</span>
+                        <details>
+                            <summary>Aritmetica binaria</summary>
+                            <div class="topic-content">
+                                <p>La <strong>aritmética binaria</strong> es el conjunto de operaciones matemáticas básicas —como suma, resta, multiplicación y división— realizadas exclusivamente con los dígitos <strong>0</strong> y <strong>1</strong>. Funciona bajo las mismas reglas lógicas que la aritmética decimal tradicional, pero al operar en base 2, simplifica las tablas de cálculo a combinaciones fundamentales como $1 + 1 = 10$, lo que permite a los circuitos de los procesadores ejecutar millones de operaciones por segundo mediante simples pulsos eléctricos.</p>
+                            </div>
+                        </details>
+                    </article>
+
+                    <article class="topic-card">
+                        <span class="topic-number">5</span>
+                        <details>
+                            <summary>Algebra de bool</summary>
+                            <div class="topic-content">
+                                <p>El <strong>álgebra de Boole</strong> es una rama de las matemáticas que opera únicamente con dos valores verdaderos o falsos (<strong>1</strong> y <strong>0</strong>) mediante operaciones lógicas fundamentales como <strong>AND</strong>, <strong>OR</strong> y <strong>NOT</strong>. Es la herramienta base para el diseño de circuitos digitales y la programación, ya que permite simplificar complejas ecuaciones lógicas para que los transistores de un procesador tomen decisiones de forma rápida y eficiente.</p>
+                            </div>
+                        </details>
                     </article>
                 </div>
             </section>
