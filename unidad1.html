@@ -184,26 +184,8 @@
             display: none;
         }
 
-        .topic-card summary::after {
-            content: '+';
-            position: absolute;
-            right: 17px;
-            top: 18px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: #aeeaff;
-            font-size: 1.28rem;
-            line-height: 1;
-        }
-
         .topic-card details[open] summary::after {
-            content: '−';
+            content: '';
         }
 
         .topic-card .topic-content {
