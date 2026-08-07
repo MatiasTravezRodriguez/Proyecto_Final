@@ -87,15 +87,15 @@
         }
 
         .hero {
-            display: grid;
+            display: flex;
             align-items: center;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 32px;
+            gap: 36px;
             min-height: calc(100vh - 132px);
             padding-top: 26px;
         }
 
         .hero-copy {
+            flex: 1 1 auto;
             max-width: 660px;
         }
 
@@ -165,66 +165,100 @@
             box-shadow: 0 22px 50px rgba(0, 0, 0, 0.18);
         }
 
-        .hero-panel {
-            padding: 30px;
-            border-radius: 32px;
-            background: rgba(4, 9, 22, 0.84);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(18px);
-        }
-
-        .hero-panel h3 {
-            margin: 0 0 18px;
-            font-size: 1.8rem;
-        }
-
-        .hero-panel p {
-            margin: 0 0 24px;
-            color: #b8cfe5;
-            line-height: 1.75;
-        }
-
-        .hero-panel ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 14px;
-        }
-
-        .hero-panel li {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 16px;
-            align-items: start;
-            padding: 14px 16px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .hero-panel li span {
-            display: inline-flex;
-            width: 44px;
-            height: 44px;
+        .hero-pou {
+            position: relative;
+            flex: 0 1 420px;
+            min-height: 360px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 16px;
-            background: rgba(88, 216, 255, 0.16);
-            color: #c3e9ff;
-            font-size: 1.15rem;
         }
 
-        .hero-panel li strong {
-            display: block;
-            margin-bottom: 4px;
-            color: #eef8ff;
+        .hero-pou .pou-image {
+            width: min(43vw, 430px);
+            aspect-ratio: 1.52 / 1;
+            position: relative;
+            border-radius: 50% 50% 58% 58% / 50% 50% 62% 62%;
+            background: radial-gradient(circle at 60% 35%, #ead6aa, #cba16c 82%, #876138);
+            border: 4px solid #1a160f;
+            box-shadow: inset 0 6px 20px rgba(255, 255, 255, 0.4), inset 0 -12px 20px rgba(52, 34, 5, 0.3), 0 16px 30px rgba(0, 0, 0, 0.34);
         }
 
-        .hero-panel li small {
-            color: #98b2d5;
-            line-height: 1.55;
+        .hero-pou .pou-image::after {
+            content: '';
+            position: absolute;
+            width: 122%;
+            height: 74%;
+            left: -11%;
+            bottom: -18%;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(191, 139, 71, 0.26), transparent 82%);
+            filter: blur(14px);
+            z-index: -1;
+        }
+
+        .pou-image .eye {
+            position: absolute;
+            top: 30%;
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            background: white;
+            border: 6px solid #28251c;
+            overflow: hidden;
+        }
+
+        .pou-image .eye.left {
+            left: 21%;
+        }
+
+        .pou-image .eye.right {
+            right: 21%;
+        }
+
+        .pou-image .eye .pupil {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            margin-left: -10px;
+            margin-top: -10px;
+            border-radius: 50%;
+            background: #171717;
+            border: 2px solid #5d2f11;
+            transition: transform 0.08s linear;
+        }
+
+        .pou-image .eye .pupil::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.9);
+        }
+
+        .pou-image .mouth {
+            position: absolute;
+            left: 50%;
+            bottom: 15%;
+            width: 88px;
+            height: 40px;
+            transform: translateX(-50%);
+            border-bottom: 5px solid #2b1e10;
+            border-radius: 0 0 80px 80px;
+        }
+
+        .pou-image .mouth::before {
+            content: '';
+            position: absolute;
+            width: 88px;
+            height: 40px;
+            left: -4px;
+            top: 1px;
+            border-bottom: 4px solid #2b1e10;
+            border-radius: 0 0 90px 90px;
+            opacity: 0.9;
         }
 
         .section-title {
@@ -571,15 +605,17 @@
                     <p class="hero-text">Estudiante de <strong>Ingeniería en Software</strong> en la <strong>Universidad Técnica de Cotopaxi</strong>. He completado con éxito la nivelación y me preparo para iniciar el primer semestre. Esta plataforma fue creada como una guía e iniciativa informativa para los estudiantes de nuevo ingreso. ¡Explora el contenido y comienza tu recorrido!</p>
                 </div>
 
-                <aside class="hero-panel">
-                    <h3>Bienvenido</h3>
-                    <p>La página está optimizada para móviles, tablets y computadoras. Conserva tu contenido existente mientras mejora la legibilidad, el ritmo visual y la interacción con animaciones suaves.</p>
-                    <ul>
-                        <li><span>🎮</span><strong>Diseño inspirado en videojuegos</strong><small>colores vivos y energía moderna.</small></li>
-                        <li><span>🌙</span><strong>Capa oscura y legible</strong><small>el fondo cubre toda la pantalla sin repetirse.</small></li>
-                        <li><span>🔊</span><strong>Reproductor integrado</strong><small>controla audio en bucle con play, pausa y volumen.</small></li>
-                    </ul>
-                </aside>
+                <div class="hero-pou" aria-hidden="true">
+                    <div class="pou-image">
+                        <div class="eye left">
+                            <div class="pupil"></div>
+                        </div>
+                        <div class="eye right">
+                            <div class="pupil"></div>
+                        </div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
             </section>
 
             <section class="section-surface reveal">
@@ -653,6 +689,36 @@
                 });
             }, { threshold: 0.18 });
             revealElements.forEach((element) => observer.observe(element));
+
+            const heroPou = document.querySelector('.hero-pou');
+            const pupils = Array.from(document.querySelectorAll('.pupil'));
+
+            function movePupils(clientX, clientY) {
+                if (!heroPou || pupils.length === 0) {
+                    return;
+                }
+
+                const rect = heroPou.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                const dx = clientX - centerX;
+                const dy = clientY - centerY;
+                const distance = Math.min(Math.sqrt(dx * dx + dy * dy), 160);
+                const angle = Math.atan2(dy, dx);
+                const maxOffset = Math.min(distance * 0.05, 10);
+
+                const offsetX = Math.cos(angle) * maxOffset;
+                const offsetY = Math.sin(angle) * maxOffset;
+
+                pupils.forEach((pupil) => {
+                    pupil.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+                });
+            }
+
+            document.addEventListener('mousemove', (event) => {
+                movePupils(event.clientX, event.clientY);
+            });
         });
     </script>
 </body>
